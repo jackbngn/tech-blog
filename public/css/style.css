@@ -1,0 +1,43 @@
+.post {
+	border: 1px solid #ccc;
+	margin-bottom: 20px;
+	padding: 20px;
+	background-color: #f1f1f1;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	position: relative;
+}
+
+.post h2 a {
+	color: #333;
+	text-decoration: none;
+}
+
+.post h2 a:hover {
+	color: #fc8f00;
+}
+
+.post p {
+	margin-bottom: 10px;
+}
+
+.author {
+	position: absolute;
+	right: 0.5;
+	bottom: 0;
+	display: flex;
+	justify-content: flex-end;
+	width: calc(100% - 40px); /* Subtract the padding and border from the width */
+}
+
+.author p {
+	font-style: italic;
+}
+
+.comments a {
+	color: #999;
+	text-decoration: none;
+}
+
+.comments a:hover {
+	text-decoration: underline;
+}
