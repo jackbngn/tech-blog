@@ -1,10 +1,11 @@
 const loginFormHandler = async (event) => {
 	event.preventDefault();
+	console.log('Login button clicked!');
 
 	const username = document.querySelector('#username-login').value.trim();
 	const password = document.querySelector('#password-login').value.trim();
 
-	if (username & password) {
+	if (username && password) {
 		const response = await fetch('/api/users/login', {
 			method: 'POST',
 			body: JSON.stringify({ username, password }),
@@ -12,7 +13,7 @@ const loginFormHandler = async (event) => {
 		});
 
 		if (response.ok) {
-			document.location.replace('/post');
+			document.location.replace('/dashboard');
 		} else {
 			alert(response.statusText);
 		}
@@ -21,11 +22,14 @@ const loginFormHandler = async (event) => {
 
 const signupFormHandler = async (event) => {
 	event.preventDefault();
+	console.log('Login button clicked!');
 
 	const username = document.querySelector('#username-signup').value.trim();
 	const password = document.querySelector('#password-signup').value.trim();
 
-	if (username & password) {
+	console.log('username:', username);
+	console.log('password:', password);
+	if (username && password) {
 		const response = await fetch('/api/users', {
 			method: 'POST',
 			body: JSON.stringify({ username, password }),
@@ -33,7 +37,7 @@ const signupFormHandler = async (event) => {
 		});
 
 		if (response.ok) {
-			document.location.replace('/post');
+			document.location.replace('/dashboard');
 		} else {
 			alert(response.statusText);
 		}

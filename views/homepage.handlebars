@@ -5,10 +5,7 @@
 			<p>{{content}}</p>
 		</div>
 		<div class='author'>
-			<p>Posted by {{user.username}}</p>
-		</div>
-		<div class='comments'>
-			<p>{{comments.length}} </p>
+			<p>Posted by {{user.username}} on {{format_date post.date_created}}</p>
 		</div>
 	</div>
 {{/each}}

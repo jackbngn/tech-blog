@@ -1,0 +1,9 @@
+[
+	{
+		"comment": "This is a comment",
+		"user": {
+			"username": "JohnDoe"
+		},
+		"date_created": "2023-04-03T12:34:56.789Z"
+	}
+]

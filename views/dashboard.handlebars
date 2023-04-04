@@ -1,0 +1,14 @@
+<div class='dashboard'>
+	<h1>My Posts</h1>
+	<ul>
+
+		{{#each posts}}
+			<li>
+				<h2>{{this.title}}</h2>
+
+			</li>
+		{{/each}}
+	</ul>
+
+	<a href='/post/'><button> + New Post</button></a>
+</div>

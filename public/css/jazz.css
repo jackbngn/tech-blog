@@ -62,6 +62,7 @@ main {
 
 .post h2 {
 	margin-top: 0;
+	margin-left: 20px;
 }
 
 .post .content {
@@ -77,16 +78,16 @@ main {
 	margin-top: 10px;
 }
 
-.logout-button {
-	background-color: #fff;
-	color: #333;
+.exit-button {
+	background-color: #333;
+	color: #fff;
 	border: none;
 	padding: 5px 10px;
 	border-radius: 3px;
 	cursor: pointer;
 }
 
-.logout-button:hover {
-	background-color: #333;
-	color: #fff;
+.exit-button:hover {
+	background-color: #fff;
+	color: #333;
 }

@@ -12,11 +12,33 @@ router.get('/', async (req, res) => {
 				},
 			],
 		});
-		console.log(postData);
+
 		const posts = postData.map((post) => post.get({ plain: true }));
 		res.render('homepage', {
 			posts,
-			loggedIn: req.session.loggedIn,
+			logged_in: req.session.logged_in,
+		});
+	} catch (err) {
+		console.log(err);
+		res.status(500).json(err);
+	}
+});
+
+router.get('/post/:id', async (req, res) => {
+	try {
+		const postData = await Post.findByPk(req.params.id, {
+			include: [
+				{
+					model: User,
+					attributes: ['username'],
+				},
+			],
+		});
+
+		const posts = postData.get({ plain: true });
+		res.render('blog', {
+			posts,
+			logged_in: req.session.logged_in,
 		});
 	} catch (err) {
 		console.log(err);
@@ -33,6 +55,23 @@ router.get('/post', withAuth, async (req, res) => {
 
 		const user = userData.get({ plain: true });
 		res.render('post', {
+			...user,
+			logged_in: true,
+		});
+	} catch (err) {
+		res.status(500).json(err);
+	}
+});
+
+router.get('/dashboard', withAuth, async (req, res) => {
+	try {
+		const userData = await User.findByPk(req.session.user_id, {
+			attributes: { exclude: ['password'] },
+			include: [{ model: Post }],
+		});
+
+		const user = userData.get({ plain: true });
+		res.render('dashboard', {
 			...user,
 			logged_in: true,
 		});

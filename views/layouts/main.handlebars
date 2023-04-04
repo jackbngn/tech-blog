@@ -1,33 +1,38 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Tech Blog</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/css/jazz.css">
-  <link rel="stylesheet" href="/css/login.css">
-</head>
-<body>
-  <header>
-    <nav>
+<html lang='en'>
 
-      {{#if logged_in}}
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/post">Dashboard</a></li>
-          <button class="logout-button">Logout</button>
-        {{else}}
-          <li><a href="/">Home</a></li>
-          <li><a href="/post">Dashboard</a></li>
-          <li><a href="/login">Login</a></li>
-        </ul>
-      {{/if}}
-    </nav>
-				<h1>Tech Blog </h1>
-  </header>
-  <main>
- {{{body}}}
-  </main>
-</body>
+	<head>
+		<meta charset='UTF-8' />
+		<meta name='viewport' content='width=device-width, initial-scale=1' />
+		<title>Tech Blog</title>
+		<link rel='stylesheet' href='/css/style.css' />
+		<link rel='stylesheet' href='/css/jazz.css' />
+		<link rel='stylesheet' href='/css/login.css' />
+	</head>
+
+	<body>
+		<header>
+			<nav>
+
+				<ul>
+					{{#if logged_in}}
+						<li><a href='/'>Home</a></li>
+						<li><a href='/dashboard'>Dashboard</a></li>
+						<button class='exit-button' id='logout'>Logout</button>
+					{{else}}
+						<li><a href='/'>Home</a></li>
+						<li><a href='/post'>Dashboard</a></li>
+						<li><a href='/login'>Login</a></li>
+					{{/if}}
+				</ul>
+			</nav>
+			<h1>Tech Blog </h1>
+		</header>
+		<main>
+			{{{body}}}
+		</main>
+	</body>
 </html>
+
+{{#if logged_in}}
+	<script src='/js/logout.js'></script>
+{{/if}}
