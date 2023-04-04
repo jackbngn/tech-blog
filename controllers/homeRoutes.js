@@ -81,6 +81,32 @@ router.get('/dashboard', withAuth, async (req, res) => {
 	}
 });
 
+router.get('/user-post/:id', withAuth, async (req, res) => {
+	try {
+		//find the user's post
+		const postData = await Post.findByPk(req.params.id);
+
+		const post = postData.get({ plain: true });
+		res.render('userPost', {
+			post,
+			logged_in: true,
+		});
+	} catch (err) {
+		res.status(500).json(err);
+	}
+});
+
+router.put('/user-post/:id', withAuth, async (req, res) => {
+	try {
+		const updatePost = await Post.update(req.body, {
+			where: { id: req.params.id },
+		});
+		res.status(200).json(updatePost);
+	} catch (err) {
+		res.status(500).json(err);
+	}
+});
+
 router.get('/login', (req, res) => {
 	// If the user is already logged in, redirect the request to another route
 	if (req.session.logged_in) {
