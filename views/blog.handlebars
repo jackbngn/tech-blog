@@ -10,21 +10,26 @@
 			{{format_date posts.date_created}}</p>
 	</div>
 </div>
-<div class='comment-form'>
-	<form id='comment'>
-		<label for='comment-text'>Comment:</label>
-		<input type='text' id='comment-text' name='comment-text' />
-		<button id='comment-submit' type='submit'>Submit</button>
-	</form>
-</div>
+{{#if logged_in}}
+	<div class='comment-form'>
+		<form id='comment'>
+			<label for='comment-text'>Comment:</label>
+			<input type='text' id='comment-text' name='comment-text' />
+			<button id='comment-submit' type='submit'>Submit</button>
+		</form>
+	</div>
+{{/if}}
 <div class='comments-container'>
-	{{#each comment}}
+	{{#each posts.comments}}
 		<div class='comment'>
-			<p>{{comment}}</p>
+			<h2>Comments</h2>
+			<p>{{this.comment_text}}</p>
 			<p>Posted by
 				{{this.user.username}}
 				on
-				{{format_date this.date_created}}</p>
+			</p>
 		</div>
 	{{/each}}
 </div>
+
+<script src='/js/comment.js'></script>

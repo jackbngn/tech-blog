@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Post } = require('../models');
+const { User, Post, Comment } = require('../models');
 const withAuth = require('../util/auth');
 
 router.get('/', async (req, res) => {
@@ -32,12 +32,23 @@ router.get('/post/:id', async (req, res) => {
 					model: User,
 					attributes: ['username'],
 				},
+				{
+					model: Comment,
+					attributes: ['comment_text', 'user_id'],
+					include: [
+						{
+							model: User,
+							attributes: ['username'],
+						},
+					],
+				},
 			],
 		});
 
 		const posts = postData.get({ plain: true });
 		res.render('blog', {
 			posts,
+			comments: posts.comments,
 			logged_in: req.session.logged_in,
 		});
 	} catch (err) {
@@ -91,17 +102,6 @@ router.get('/user-post/:id', withAuth, async (req, res) => {
 			post,
 			logged_in: true,
 		});
-	} catch (err) {
-		res.status(500).json(err);
-	}
-});
-
-router.put('/user-post/:id', withAuth, async (req, res) => {
-	try {
-		const updatePost = await Post.update(req.body, {
-			where: { id: req.params.id },
-		});
-		res.status(200).json(updatePost);
 	} catch (err) {
 		res.status(500).json(err);
 	}
