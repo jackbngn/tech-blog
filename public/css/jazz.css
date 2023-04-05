@@ -8,16 +8,17 @@ body {
 header {
 	background-color: #333;
 	color: #fff;
-	padding: 6px;
+	padding: 5px;
 }
 
 header h1 a {
 	font-size: 2.5rem;
 	margin: 1rem 0;
 	margin-left: 40px;
+	margin-top: -5px;
 	background-color: #fff;
 	color: #333;
-	padding: 10px;
+	padding: 30px;
 	border-radius: 5px;
 	display: inline-block;
 	border: 5px solid #fc8f00;
@@ -36,6 +37,7 @@ nav ul {
 	padding: 0;
 	display: flex;
 	align-items: center;
+	margin-left: 10px;
 }
 
 nav li {
@@ -83,12 +85,6 @@ main {
 	background-color: #333;
 	color: #fff;
 	border: none;
-	padding: 5px 10px;
-	border-radius: 3px;
+	font-size: 17px;
 	cursor: pointer;
-}
-
-.exit-button:hover {
-	background-color: #fff;
-	color: #333;
 }
