@@ -11,8 +11,7 @@
 		"sequelize": "^6.30.0"
 	},
 	"scripts": {
-		"start": "node server.js",
-		"install": "npm install && node-pre-gyp install --fallback-to-build"
+		"start": "node server.js"
 	},
 	"name": "tech-blog",
 	"version": "1.0.0",
