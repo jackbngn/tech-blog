@@ -20,16 +20,15 @@
 	</div>
 {{/if}}
 <div class='comments-container'>
-	{{#each posts.comments}}
-		<div class='comment'>
-			<h2>Comments</h2>
-			<p>{{this.comment_text}}</p>
-			<p>Posted by
-				{{this.user.username}}
-				on
-			</p>
-		</div>
-	{{/each}}
+	<h2>Comments</h2>
 </div>
+{{#each posts.comments}}
+	<div class='comment'>
+		<p>{{this.comment_text}}</p>
+		<p>Posted by
+			{{this.user.username}}
+		</p>
+	</div>
+{{/each}}
 
 <script src='/js/comment.js'></script>

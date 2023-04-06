@@ -215,8 +215,9 @@ button[type='submit']:hover {
 .comments-container {
 	margin-top: 20px;
 	border-top: 2px solid #ccc;
-
 	padding-top: 20px;
+	display: flex;
+	justify-content: center;
 }
 
 .comment {
@@ -234,6 +235,6 @@ button[type='submit']:hover {
 	color: #333;
 }
 
-.comment h2 {
-	margin-left: 550px;
+.comments-container h2 {
+	margin-left: 30px;
 }
