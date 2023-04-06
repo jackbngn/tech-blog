@@ -1,3 +1,4 @@
 .env
 node_modules
-.DS_Store
+.DS_Storenpm-debug.log
+node_modules
