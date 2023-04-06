@@ -1,7 +1,8 @@
 .post {
 	border: 1px solid #ccc;
+	margin: 25px;
 	margin-bottom: 20px;
-	padding: 20px;
+	padding: 10px;
 	background-color: #f1f1f1;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 	position: relative;
@@ -21,20 +22,6 @@
 	font-size: 20px;
 }
 
-.author {
-	position: absolute;
-	right: 20;
-	bottom: 0;
-	display: flex;
-	justify-content: flex-end;
-	width: calc(100% - 40px);
-}
-
-.author p {
-	font-style: italic;
-	margin-bottom: 10px;
-}
-
 .blog {
 	display: flex;
 	flex-direction: column;
@@ -44,7 +31,8 @@
 	border: 1px solid #ccc;
 	border-radius: 5px;
 	padding: 40px;
-	max-width: 800px;
+	padding-bottom: 80px;
+	max-width: 650px;
 	margin: 0 auto;
 	margin-top: 20px;
 	background-color: #f1f1f1;
@@ -58,9 +46,23 @@
 }
 
 .blog p {
-	margin-bottom: 10px;
-	margin-left: 30px;
+	margin-bottom: 20px;
+	margin-left: 65px;
 	font-size: 20px;
+}
+
+.author {
+	position: absolute;
+	right: 10;
+	bottom: 0;
+	display: flex;
+	justify-content: flex-end;
+	width: calc(100% - 40px);
+}
+
+.author p {
+	font-style: italic;
+	font-size: 17px;
 }
 
 .comment-container {
@@ -74,7 +76,7 @@
 	align-items: center;
 	margin: 0 auto;
 	margin-top: 40px;
-	width: 600px;
+	width: 450px;
 	background-color: #f1f1f1;
 	border: 1px solid #ccc;
 }
